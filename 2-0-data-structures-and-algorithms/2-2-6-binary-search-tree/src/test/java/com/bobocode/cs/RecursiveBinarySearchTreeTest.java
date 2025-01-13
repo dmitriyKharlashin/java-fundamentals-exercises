@@ -33,25 +33,25 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class RecursiveBinarySearchTreeTest {
     private static final Predicate<Field> SIZE_FIELD = field ->
             field.getName().toLowerCase().contains("size") || field.getName().toLowerCase().contains("length");
-    
+
     private static final Predicate<Field> NODE_FIELD = field ->
             field.getType().getSimpleName().equals("Node");
-    
+
     private static final Predicate<Field> ELEMENT_FIELD = field ->
             field.getName().toLowerCase().contains("element")
             || field.getName().toLowerCase().contains("item")
             || field.getName().toLowerCase().contains("value");
-    
+
     private static final Predicate<Field> LEFT_FIELD = field ->
             field.getName().toLowerCase().contains("left")
             && field.getType().getSimpleName().equals("Node");
-    
+
     private static final Predicate<Field> RIGHT_FIELD = field ->
             field.getName().toLowerCase().contains("right")
             && field.getType().getSimpleName().equals("Node");
 
     private static final Integer[] someElements = {10, 9, 11, 8, 12, 7};
-    
+
     private BinarySearchTree<Integer> tree = new RecursiveBinarySearchTree<>();
 
     @Test
@@ -253,7 +253,7 @@ class RecursiveBinarySearchTreeTest {
         return Stream.of(
                 //empty tree
                 arguments(new Integer[]{}, 0),
-                //tree with a single element
+//                //tree with a single element
                 arguments(new Integer[]{24}, 0),
                 /*
                  * .......10
